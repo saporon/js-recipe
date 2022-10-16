@@ -1,26 +1,30 @@
 const choice1 = document.getElementById("choice-1")
 const choice2 = document.getElementById("choice-2")
 const choice3 = document.getElementById("choice-3")
+const choice4 = document.getElementById("choice-4")
 const feedback = document.getElementById("feedback")
 const quizText = document.getElementById("quiz-text")
 const quizImage = document.getElementById("quiz-image")
 
 const quiz = {
-  text: "この星の名前は何でしょう？",
-  image: "Ganymede.jpg",
+  text: "何本？",
+  image: "Two.jpeg",
   choices: [
     {
-      text: "ゴリアテ",
-      feedback:
-        "残念！ゴリアテは、旧約聖書に登場するダビデに石で殺される巨人だよ。",
+      text: "5本",
+      feedback: "残念、もう一度数えてみて",
     },
     {
-      text: "ゼニガメ",
-      feedback: "残念！ゼニガメは、クサガメまたはニホンイシガメの幼体だよ。",
+      text: "2本",
+      feedback: "正解！",
     },
     {
-      text: "ガニメデ",
-      feedback: "正解！ガニメデは、木星の第三惑星だよ！",
+      text: "日本",
+      feedback: "Do you like Japan ?",
+    },
+    {
+      text: "3本",
+      feedback: "そっち数えたの！？",
     },
   ],
 }
@@ -36,6 +40,7 @@ const reloadQuiz = function () {
   choice1.textContent = quiz.choices[0].text
   choice2.textContent = quiz.choices[1].text
   choice3.textContent = quiz.choices[2].text
+  choice4.textContent = quiz.choices[3].text
 }
 
 const choose = function (choiceNumber) {
@@ -52,6 +57,10 @@ choice2.onclick = function () {
 
 choice3.onclick = function () {
   choose(2)
+}
+
+choice4.onclick = function () {
+  choose(3)
 }
 
 reloadQuiz()
